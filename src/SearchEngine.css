@@ -20,25 +20,21 @@
   border: 1px solid rgb(17, 17, 17, 0.1);
   background: #e6dedd;
   opacity: 0.5;
-  /* border-radius: 50px; */
   border-radius: 30px;
   padding: 20px 20px;
   flex-grow: 2;
-  /* padding: 0; */
   margin-top: 0;
   transition: all 200ms ease-in-out;
-  /* width: 400px; */
   max-width: 100%;
 }
-/*
 .SearchEngine .form-control:hover {
   border: 1px solid rgb(17, 17, 17, 0.1);
-  opacity: 90%;
-} */
+  opacity: 0.9;
+}
 .SearchEngine .search-icon {
-  opacity: 100%;
+  opacity: 1;
   transition: all 150ms ease-in-out;
 }
 .SearchEngine .search-icon:hover {
-  opacity: 70%;
+  opacity: 0.7;
 }
