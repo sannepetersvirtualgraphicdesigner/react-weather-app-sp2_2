@@ -15,7 +15,7 @@ export default function Footer() {
             {" "}
             GitHub{" "}
           </a>{" "}
-          2020
+          2021
         </small>
       </footer>
     </div>

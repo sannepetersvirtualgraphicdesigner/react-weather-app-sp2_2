@@ -37,3 +37,12 @@
   margin-top: 5px;
   margin-bottom: 20px;
 }
+.Weather .weather-icons {
+  transition: all 150ms ease-in-out;
+  /* opacity: 1; */
+  /* height: 70px; */
+  /* color: #f638dc; */
+}
+.Weather .weather-icons:hover {
+  opacity: 0.7;
+}

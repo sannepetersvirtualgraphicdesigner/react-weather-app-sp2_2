@@ -11,7 +11,7 @@ export default function Weather() {
     imgUrl: "img/wi-night-alt-cloudy-gusts.svg",
     feels: 20,
     humidity: 80,
-    wind: 10
+    wind: 10,
   };
 
   return (
@@ -28,7 +28,7 @@ export default function Weather() {
           <div className="col-4 weather-temperature">
             {weatherData.temperature}°C
           </div>
-          <div className="col-4">
+          <div className="col-4 weather-icons">
             <img src={weatherData.imgUrl} alt={weatherData.description} />
           </div>
           <div className="col-4 temp-parameters">
