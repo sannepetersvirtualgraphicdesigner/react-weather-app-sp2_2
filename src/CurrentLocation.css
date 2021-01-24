@@ -1,3 +1,6 @@
+.CurrentLocation {
+  display: inline;
+}
 .CurrentLocation .fa-map-marker-alt {
   border: 1px solid #f638dc;
   border-radius: 50%;
