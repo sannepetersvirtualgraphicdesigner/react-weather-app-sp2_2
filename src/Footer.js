@@ -8,7 +8,7 @@ export default function Footer() {
         <small>
           Made by Sanne P. Code on
           <a
-            href="https://github.com/sannepetersvirtualgraphicdesigner/vanilla-weather-app"
+            href="https://github.com/sannepetersvirtualgraphicdesigner/react-weather-app-sp2_2"
             target="_blank"
             rel="noopener noreferrer"
           >
