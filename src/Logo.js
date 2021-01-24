@@ -4,7 +4,7 @@ import "./Logo.css";
 export default function Logo() {
   return (
     <div className="col-4">
-      <div className="logo-listen">
+      <div className="Logo">
         <a
           href="https://www.sannepeters.com"
           target="_blank"

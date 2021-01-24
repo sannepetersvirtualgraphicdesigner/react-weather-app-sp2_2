@@ -1,4 +1,5 @@
-.Logo .logo-listen {
-  margin-top: 15px;
+.Logo {
+  width: 90%;
+  margin-top: 5px;
   cursor: pointer;
 }
