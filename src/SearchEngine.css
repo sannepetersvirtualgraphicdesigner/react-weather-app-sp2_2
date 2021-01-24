@@ -10,18 +10,19 @@
   cursor: pointer;
   position: relative;
 }
-/* .SearchEngine .form-control {
+.SearchEngine .search-icon {
+  font-size: 1rem;
+  position: relative;
+  color: #100e0e;
+}
+.SearchEngine .form-control {
   height: 50px;
   border-radius: 50px;
   border: 0.5px solid #ffffff;
   flex-grow: 2;
   padding: 0;
-}*/
-.SearchEngine .search-icon {
-  font-size: 1rem;
-  position: relative;
-  color: #100e0e;
-} /*
+}
+/*
 .SearchEngine .form-control {
   border: 1px solid rgb(17, 17, 17, 0.1);
   border-radius: 30px;
