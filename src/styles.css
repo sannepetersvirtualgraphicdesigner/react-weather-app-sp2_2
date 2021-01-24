@@ -1,0 +1,9 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #100e0e;
+}
+nav,
+main {
+  text-align: center;
+  margin: 0px auto;
+}
