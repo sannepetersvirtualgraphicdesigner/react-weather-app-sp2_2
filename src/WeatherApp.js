@@ -13,7 +13,7 @@ export default function WeatherApp() {
       <div className="container">
         <div>
           <Header />
-          <Weather defaultCity="New York" />
+          <Weather defaultCity="Sydney" />
           <Footer />
         </div>
       </div>
