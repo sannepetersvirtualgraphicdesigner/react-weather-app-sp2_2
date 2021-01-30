@@ -4,11 +4,22 @@ import "./Weather.css";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weatherData, setweatherData] = useState({});
 
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
+    setweatherData({
+      city: response.data.name,
+      temperature: response.data.main.temp,
+      time: "10:00",
+      date: "Friday, 13 November 2020",
+      description: response.data.weather[0].description,
+      imgUrl: "img/wi-night-alt-cloudy-gusts.svg",
+      feels: response.data.main.feels_like,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+    });
+
     setReady(true);
   }
 
@@ -17,33 +28,35 @@ export default function Weather() {
       <div className="Weather">
         <main>
           <div className="overview">
-            <h1>Sydney</h1>
+            <h1>{weatherData.city}</h1>
             <ul className="date-text">
-              <li>Last updated: 10:00</li>
-              <li>Friday, 13 November 2020</li>
+              <li>Last updated: {weatherData.time}</li>
+              <li>{weatherData.date}</li>
             </ul>
           </div>
           <div className="row">
             <div className="col-4 weather-temperature">
-              {Math.round(temperature)}°C
+              {Math.round(weatherData.temperature)}°C
             </div>
             <div className="col-4 weather-icons">
-              <img src="img/wi-night-alt-cloudy-gusts.svg" alt="cloudy" />
+              <img src={weatherData.imgUrl} alt={weatherData.description} />
             </div>
             <div className="col-4 temp-parameters">
               <ul>
-                <li>Feels like: 19°C</li>
+                <li>Feels like: {Math.round(weatherData.feels)}°C</li>
               </ul>
               <ul>
-                <li>Humidity: 3%</li>
+                <li>Humidity: {weatherData.humidity}%</li>
               </ul>
               <ul>
-                <li>Wind speed: 3 km/h</li>
+                <li>Wind speed: {Math.round(weatherData.wind)} km/h</li>
               </ul>
             </div>
           </div>
           <div className="row description">
-            <div className="col-12">cloudy</div>
+            <div className="col-12 text-capitalize">
+              {weatherData.description}
+            </div>
           </div>
         </main>
       </div>
@@ -67,7 +80,7 @@ export default function Weather() {
 //     setTemperature(response.data.main.temp);
 //     setReady(true);
 //   }
-// let weatherData = {
+// const weatherData = {
 //     city: "Sydney",
 //     temperature: 19,
 //     time: "10:00",
@@ -81,38 +94,38 @@ export default function Weather() {
 //   if (ready) {
 //     return (
 //       <div className="Weather">
-//         <main>
-//           <div className="overview">
-//             <h1>{weatherData.city}</h1>
-//             <ul className="date-text">
-//               <li>Last updated: {weatherData.time}</li>
-//               <li>{weatherData.date}</li>
-//             </ul>
-//           </div>
-//           <div className="row">
-//             {/* <div className="col-4 weather-temperature">
-//             {weatherData.temperature}°C
-//           </div> */}
-//             <div className="col-4 weather-temperature">{temperature}°C</div>
-//             <div className="col-4 weather-icons">
-//               <img src={weatherData.imgUrl} alt={weatherData.description} />
-//             </div>
-//             <div className="col-4 temp-parameters">
-//               <ul>
-//                 <li>Feels like: {weatherData.feels}°C</li>
-//               </ul>
-//               <ul>
-//                 <li>Humidity: {weatherData.humidity}%</li>
-//               </ul>
-//               <ul>
-//                 <li>Wind speed: {weatherData.wind} km/h</li>
-//               </ul>
-//             </div>
-//           </div>
-//           <div className="row description">
-//             <div className="col-12">{weatherData.description}</div>
-//           </div>
-//         </main>
+// <main>
+//   <div className="overview">
+//     <h1>{weatherData.city}</h1>
+//     <ul className="date-text">
+//       <li>Last updated: {weatherData.time}</li>
+//       <li>{weatherData.date}</li>
+//     </ul>
+//   </div>
+//   <div className="row">
+//     {/* <div className="col-4 weather-temperature">
+//     {weatherData.temperature}°C
+//   </div> */}
+//     <div className="col-4 weather-temperature">{temperature}°C</div>
+//     <div className="col-4 weather-icons">
+//       <img src={weatherData.imgUrl} alt={weatherData.description} />
+//     </div>
+//     <div className="col-4 temp-parameters">
+//       <ul>
+//         <li>Feels like: {weatherData.feels}°C</li>
+//       </ul>
+//       <ul>
+//         <li>Humidity: {weatherData.humidity}%</li>
+//       </ul>
+//       <ul>
+//         <li>Wind speed: {weatherData.wind} km/h</li>
+//       </ul>
+//     </div>
+//   </div>
+//   <div className="row description">
+//     <div className="col-12">{weatherData.description}</div>
+//   </div>
+// </main>
 //       </div>
 //     );
 //   } else {
