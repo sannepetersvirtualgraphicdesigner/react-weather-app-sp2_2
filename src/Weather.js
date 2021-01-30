@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setweatherData] = useState({});
+export default function Weather(props) {
+  // const [ready, setReady] = useState(false);
+  const [weatherData, setweatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
     setweatherData({
+      ready: true,
       city: response.data.name,
       temperature: response.data.main.temp,
       time: "10:00",
@@ -19,11 +20,9 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
     });
-
-    setReady(true);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <main>
@@ -64,8 +63,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "b82cab690fb5582f3fbd2a7b59894357";
-    let city = "Sydney";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
     return "Loading...";
   }

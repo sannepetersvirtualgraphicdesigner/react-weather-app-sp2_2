@@ -10,10 +10,10 @@ import Footer from "./Footer";
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
-      <div class="container">
+      <div className="container">
         <div>
           <Header />
-          <Weather />
+          <Weather defaultCity="Sydney" />
           <Footer />
         </div>
       </div>
