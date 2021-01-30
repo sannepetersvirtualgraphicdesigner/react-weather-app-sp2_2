@@ -62,7 +62,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    const apiKey = "e347c1e77eff0865f24ace0de5ae743f";
+    const apiKey = "b82cab690fb5582f3fbd2a7b59894357";
     let city = "Sydney";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
