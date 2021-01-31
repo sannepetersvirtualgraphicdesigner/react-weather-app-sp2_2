@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
-  // const [ready, setReady] = useState(false);
   const [weatherData, setweatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -13,8 +12,7 @@ export default function Weather(props) {
       ready: true,
       city: response.data.name,
       temperature: response.data.main.temp,
-      // time: "10:00",
-      // date: "Friday, 13 November 2020",
+
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       // imgUrl: "img/wi-night-alt-cloudy-gusts.svg",

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./SearchEngine.css";
 
-export default function SearchEngine() {
-  const [city, setCity] = useState("");
+export default function SearchEngine(props) {
+  const [city, setCity] = useState(props.defaultCity); //i dont think it gets the defaultCity from WeatherApp.js
 
   function handleSubmit(event) {
     event.preventDefault();
