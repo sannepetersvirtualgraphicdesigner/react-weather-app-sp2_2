@@ -31,9 +31,6 @@ export default function Weather(props) {
           <div className="overview">
             <h1>{weatherData.city}</h1>
             <ul className="date-text">
-              {/* <li>Last updated: {weatherData.time}</li>
-              <li>{weatherData.date}</li> */}
-
               <FormattedDate date={weatherData.date} />
             </ul>
           </div>

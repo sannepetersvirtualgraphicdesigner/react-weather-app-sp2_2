@@ -24,7 +24,7 @@ export default function FormattedDate(props) {
     "November",
     "December",
   ];
-  console.log(props.date);
+  //   console.log(props.date);
   let day = days[props.date.getDay()];
   let currentDay = props.date.getDate();
   let hours = props.date.getHours();
