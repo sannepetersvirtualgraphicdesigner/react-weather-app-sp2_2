@@ -2,10 +2,14 @@ import React from "react";
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("Searching");
+  }
   return (
     <div className="col-4">
       <div className="SearchEngine">
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Which place?"
