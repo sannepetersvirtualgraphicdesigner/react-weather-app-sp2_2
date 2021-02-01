@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import Logo from "./Logo";
+
 import axios from "axios";
 import "./Weather.css";
 // import SearchEngine from "./SearchEngine";
@@ -39,20 +41,25 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Which place?"
-            className="form-control"
-            autoComplete="off"
-            autofocus="on"
-            spellCheck="false"
-            onChange={handleCityChange}
-          />
-          <button className="button">
-            <i className="fas fa-search search-icon"></i>
-          </button>
-        </form>
+        <Logo />
+
+        <div className="col-4">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              placeholder="Which place?"
+              className="form-control"
+              autoComplete="off"
+              autofocus="on"
+              spellCheck="false"
+              onChange={handleCityChange}
+            />
+            <button className="button">
+              <i className="fas fa-search search-icon"></i>
+            </button>
+          </form>
+        </div>
+
         <WeatherInfo data={weatherData} />
       </div>
     );
