@@ -19,6 +19,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       // imgUrl: "img/wi-night-alt-cloudy-gusts.svg",
+      icon: response.data.weather[0].icon,
       feels: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
