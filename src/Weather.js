@@ -49,7 +49,7 @@ export default function Weather(props) {
             <div className="col-4">
               <form onSubmit={handleSubmit}>
                 <input
-                  type="search"
+                  type="text"
                   placeholder="Which place?"
                   className="form-control"
                   autoComplete="off"
