@@ -4,6 +4,9 @@ import Logo from "./Logo";
 
 import axios from "axios";
 import "./Weather.css";
+import TempSwitch from "./TempSwitch";
+import CurrentLocation from "./CurrentLocation";
+
 // import SearchEngine from "./SearchEngine";
 
 export default function Weather(props) {
@@ -42,25 +45,33 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <Logo />
+        <nav class="header">
+          <div class="row">
+            <Logo />
 
-        <div className="col-4">
-          <form onSubmit={handleSubmit}>
-            <input
-              type="search"
-              placeholder="Which place?"
-              className="form-control"
-              autoComplete="off"
-              autofocus="on"
-              spellCheck="false"
-              onChange={handleCityChange}
-            />
-            <button className="button">
-              <i className="fas fa-search search-icon"></i>
-            </button>
-          </form>
-        </div>
+            <div className="col-4">
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="search"
+                  placeholder="Which place?"
+                  className="form-control"
+                  autoComplete="off"
+                  autofocus="on"
+                  spellCheck="false"
+                  onChange={handleCityChange}
+                />
+                <button className="button">
+                  <i className="fas fa-search search-icon"></i>
+                </button>
+              </form>
+            </div>
 
+            <div class="col-4">
+              <TempSwitch />
+              <CurrentLocation />
+            </div>
+          </div>
+        </nav>
         <WeatherInfo data={weatherData} />
       </div>
     );
