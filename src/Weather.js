@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import Logo from "./Logo";
-
 import axios from "axios";
 import "./Weather.css";
 import TempSwitch from "./TempSwitch";
 import CurrentLocation from "./CurrentLocation";
-
-// import SearchEngine from "./SearchEngine";
 
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
