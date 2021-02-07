@@ -37,6 +37,10 @@
   margin-top: 5px;
   margin-bottom: 20px;
 }
+.weather .col-4 .weather-icons canvas {
+  height: 120px;
+  width: 120px;
+}
 .Weather .weather-icons {
   transition: all 150ms ease-in-out;
 }

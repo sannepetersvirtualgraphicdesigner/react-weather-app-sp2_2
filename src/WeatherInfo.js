@@ -17,8 +17,6 @@ export default function WeatherInfo(props) {
             {Math.round(props.data.temperature)}°C
           </div>
           <div className="col-4 weather-icons">
-            {/* <img src={props.data.imgUrl} alt={props.data.description} /> */}
-            {/* <img src="img/wi-night-alt-cloudy-gusts.svg" alt="" /> */}
             <WeatherIcon code={props.data.icon} alt={props.data.description} />
           </div>
           <div className="col-4 temp-parameters">
