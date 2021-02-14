@@ -5,7 +5,6 @@ import Logo from "./Logo";
 import axios from "axios";
 import "./Weather.css";
 import TempSwitch from "./TempSwitch";
-// import CurrentLocation from "./CurrentLocation";
 
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
@@ -40,15 +39,6 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function displayTemperature(response) {
-    console.log(response.data);
-  }
-  // let currentTemp = Math.round(response.data.main.temp);
-  // let header = document.querySelector("#header");
-  // header.innerHTML = `current temp is ${currentTemp} is ${response.data.name}`;
-  //   console.log(response.data.main.temp);
-  // }
-
   function retrievePosition(position) {
     let apiKey = "8d988e6da17ced5fb36c8fbb6a0c1a20";
     let unit = "metric";
@@ -56,7 +46,7 @@ export default function Weather(props) {
     let lon = position.coords.longitude;
     let apiBeginpoint = "https://api.openweathermap.org/data/2.5/weather";
     let apiUrl = `${apiBeginpoint}?lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`;
-    axios.get(apiUrl).then(displayTemperature);
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function getPosition(event) {
@@ -90,11 +80,8 @@ export default function Weather(props) {
 
             <div class="col-4">
               <TempSwitch />
-              {/* <CurrentLocation /> */}
               <div className="CurrentLocation">
-                <a href="/" onClick={getPosition}>
-                  <i className="fas fa-map-marker-alt"></i>
-                </a>
+                <i className="fas fa-map-marker-alt" onClick={getPosition}></i>
               </div>
             </div>
           </div>
