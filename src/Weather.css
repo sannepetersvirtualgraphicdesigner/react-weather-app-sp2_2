@@ -107,3 +107,11 @@
 .Weather .CurrentLocation .fa-map-marker-alt:hover {
   opacity: 0.7;
 }
+
+/* Unit conversion */
+.Weather .TempSwitch {
+  display: inline;
+}
+.Weather .TempSwitch a {
+  color: #f638dc;
+}

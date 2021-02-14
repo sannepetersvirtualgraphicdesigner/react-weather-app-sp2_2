@@ -4,7 +4,6 @@ import WeatherForecast from "./WeatherForecast";
 import Logo from "./Logo";
 import axios from "axios";
 import "./Weather.css";
-import TempSwitch from "./TempSwitch";
 
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
@@ -79,7 +78,9 @@ export default function Weather(props) {
             </div>
 
             <div class="col-4">
-              <TempSwitch />
+              <div className="TempSwitch">
+                <a href="/">°C</a> / <a href="/">°F</a>
+              </div>
               <div className="CurrentLocation">
                 <i className="fas fa-map-marker-alt" onClick={getPosition}></i>
               </div>
