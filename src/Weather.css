@@ -89,3 +89,21 @@
 .Weather .search-icon:hover {
   opacity: 0.7;
 }
+
+/* Currentlocation button */
+.Weather .CurrentLocation {
+  display: inline;
+}
+.Weather .CurrentLocation .fa-map-marker-alt {
+  border: 1px solid #f638dc;
+  border-radius: 50%;
+  color: #f638dc;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+.Weather .CurrentLocation .fa-map-marker-alt:hover {
+  opacity: 0.7;
+}
