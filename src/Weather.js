@@ -8,6 +8,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("celsius");
 
   function handleResponse(response) {
     // console.log(response.data);
@@ -52,6 +53,19 @@ export default function Weather(props) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(retrievePosition);
   }
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("fahrenheit");
+  }
+
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("celsius");
+  }
+
+  function fahrenheit() {
+    return (response.data.main.temp * 9) / 5 + 32;
+  }
 
   if (weatherData.ready) {
     return (
@@ -79,7 +93,10 @@ export default function Weather(props) {
 
             <div class="col-4">
               <div className="TempSwitch">
-                <a href="/">°C</a> / <a href="/">°F</a>
+                <a href="/">°C</a> /{" "}
+                <a href="/" onClick={showFahrenheit}>
+                  °F
+                </a>
               </div>
               <div className="CurrentLocation">
                 <i className="fas fa-map-marker-alt" onClick={getPosition}></i>
