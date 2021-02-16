@@ -6,7 +6,9 @@ export default function WeatherInfo(props) {
   function fahrenheit() {
     return Math.round((props.data.temperature * 9) / 5 + 32);
   }
-
+  function fahrenheitFeels() {
+    return Math.round((props.data.feels * 9) / 5 + 32);
+  }
   if (props.unit === "celsius") {
     return (
       <div className="WeatherInfo">
@@ -67,7 +69,7 @@ export default function WeatherInfo(props) {
             </div>
             <div className="col-4 temp-parameters">
               <ul>
-                <li>Feels like: {Math.round(props.data.feels)}°F</li>
+                <li>Feels like: {fahrenheitFeels()}°F</li>
               </ul>
               <ul>
                 <li>Humidity: {props.data.humidity}%</li>

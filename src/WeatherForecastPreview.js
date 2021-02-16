@@ -13,14 +13,11 @@ export default function WeatherForecastPreview(props) {
     return `${celsiusTemperature}°C`;
   }
   function fahrenheitTemperature() {
-    let fahrenheitTemperature = Math.round(
-      (props.data.temperature * 9) / 5 + 32
-    );
+    let fahrenheitTemperature = Math.round((props.data.main.temp * 9) / 5 + 32);
     console.log(fahrenheitTemperature);
     return `${fahrenheitTemperature}°F`;
   }
   if (props.unit === "celsius") {
-    // console.log(props.unit);
     return (
       <div className="WeatherForecastPreview col">
         <WeatherIcon code={props.data.weather[0].icon} />
