@@ -99,7 +99,7 @@ export default function Weather(props) {
           </div>
         </nav>
         <WeatherInfo data={weatherData} unit={unit} />
-        <WeatherForecast city={weatherData.city} />
+        <WeatherForecast city={weatherData.city} unit={unit} />
       </div>
     );
   } else {

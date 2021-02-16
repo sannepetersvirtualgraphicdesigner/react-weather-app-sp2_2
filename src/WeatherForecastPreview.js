@@ -7,17 +7,38 @@ export default function WeatherForecastPreview(props) {
     let hours = date.getHours();
     return `${hours}:00`;
   }
-  function temperature() {
-    let temperature = Math.round(props.data.main.temp);
-    return `${temperature}°C`;
+  function celsiusTemperature() {
+    let celsiusTemperature = Math.round(props.data.main.temp);
+    console.log(celsiusTemperature);
+    return `${celsiusTemperature}°C`;
   }
-  return (
-    <div className="WeatherForecastPreview col">
-      <WeatherIcon code={props.data.weather[0].icon} />
-      <br />
-      <strong>{hours()}</strong>
-      <br />
-      {temperature()}
-    </div>
-  );
+  function fahrenheitTemperature() {
+    let fahrenheitTemperature = Math.round(
+      (props.data.temperature * 9) / 5 + 32
+    );
+    console.log(fahrenheitTemperature);
+    return `${fahrenheitTemperature}°F`;
+  }
+  if (props.unit === "celsius") {
+    // console.log(props.unit);
+    return (
+      <div className="WeatherForecastPreview col">
+        <WeatherIcon code={props.data.weather[0].icon} />
+        <br />
+        <strong>{hours()}</strong>
+        <br />
+        {celsiusTemperature()}
+      </div>
+    );
+  } else {
+    return (
+      <div className="WeatherForecastPreview col">
+        <WeatherIcon code={props.data.weather[0].icon} />
+        <br />
+        <strong>{hours()}</strong>
+        <br />
+        {fahrenheitTemperature()}
+      </div>
+    );
+  }
 }

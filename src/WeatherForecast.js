@@ -6,6 +6,7 @@ import "./WeatherForecast.css";
 export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
+  let unit = "celsius";
 
   function handleForecastResponse(response) {
     setForecast(response.data);
@@ -13,12 +14,12 @@ export default function WeatherForecast(props) {
   }
 
   if (loaded && props.city === forecast.city.name) {
-    // console.log(forecast);
-    // console.log(unit);
+    console.log(forecast);
+    console.log(unit);
     return (
       <div className="WeatherForecast row">
         {forecast.list.slice(0, 5).map(function (forecastItem) {
-          return <WeatherForecastPreview data={forecastItem} />;
+          return <WeatherForecastPreview data={forecastItem} unit={unit} />;
         })}
         {/* Keep to build the beginner way 
         <WeatherForecastPreview data={forecast.list[0]} />
