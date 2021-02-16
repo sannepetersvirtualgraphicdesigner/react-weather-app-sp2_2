@@ -52,6 +52,7 @@ export default function Weather(props) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(retrievePosition);
   }
+
   function showFahrenheit(event) {
     event.preventDefault();
     setUnit("fahrenheit");
