@@ -112,6 +112,9 @@
 .Weather .TempSwitch {
   display: inline;
 }
-.Weather .TempSwitch a {
+.Weather .TempSwitch span {
   color: #f638dc;
+}
+.Weather .TempSwitch span:hover {
+  cursor: pointer;
 }

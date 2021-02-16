@@ -11,7 +11,6 @@ export default function Weather(props) {
   const [unit, setUnit] = useState("celsius");
 
   function handleResponse(response) {
-    // console.log(response.data);
     setweatherData({
       ready: true,
       city: response.data.name,
@@ -63,10 +62,6 @@ export default function Weather(props) {
     setUnit("celsius");
   }
 
-  function fahrenheit() {
-    return (response.data.main.temp * 9) / 5 + 32;
-  }
-
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -93,10 +88,8 @@ export default function Weather(props) {
 
             <div class="col-4">
               <div className="TempSwitch">
-                <a href="/">°C</a> /{" "}
-                <a href="/" onClick={showFahrenheit}>
-                  °F
-                </a>
+                <span onClick={showCelsius}>°C</span> /{" "}
+                <span onClick={showFahrenheit}>°F</span>
               </div>
               <div className="CurrentLocation">
                 <i className="fas fa-map-marker-alt" onClick={getPosition}></i>
@@ -104,7 +97,7 @@ export default function Weather(props) {
             </div>
           </div>
         </nav>
-        <WeatherInfo data={weatherData} />
+        <WeatherInfo data={weatherData} unit={unit} />
         <WeatherForecast city={weatherData.city} />
       </div>
     );
