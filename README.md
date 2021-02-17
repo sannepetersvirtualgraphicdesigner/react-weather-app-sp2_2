@@ -15,6 +15,7 @@ Have a look at my React weather app with a simple but clean UI.
 
 ## Next release
 
+- Dynamically add/remove classList to C/F
 - Dark and Light theme
 - Mobile proof
 
