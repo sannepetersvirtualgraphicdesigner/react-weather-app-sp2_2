@@ -5,10 +5,10 @@ Have a look at my React weather app with a simple but clean UI.
 
 ## How it's made
 
-- HTML
-- CSS
 - React
 - JavaScript
+- HTML5
+- CSS3
 - Bootstrap
 - Ajax - Axios
 - Open Weather Api
@@ -21,4 +21,4 @@ Have a look at my React weather app with a simple but clean UI.
 ## Special thanks/credits to 
 
 - Julia K. and Valeria S. for concept
-- SheCodes for introducing me to coding
+- SheCodes for such a helpful and great coding course
