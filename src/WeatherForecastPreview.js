@@ -9,12 +9,10 @@ export default function WeatherForecastPreview(props) {
   }
   function celsiusTemperature() {
     let celsiusTemperature = Math.round(props.data.main.temp);
-    console.log(celsiusTemperature);
     return `${celsiusTemperature}°C`;
   }
   function fahrenheitTemperature() {
     let fahrenheitTemperature = Math.round((props.data.main.temp * 9) / 5 + 32);
-    console.log(fahrenheitTemperature);
     return `${fahrenheitTemperature}°F`;
   }
   if (props.unit === "celsius") {

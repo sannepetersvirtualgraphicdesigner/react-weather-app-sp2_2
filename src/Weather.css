@@ -4,13 +4,9 @@
   font-weight: 700;
   font-size: 3.25em;
 }
-.Weather .overview {
-  margin-bottom: 30px;
-}
 .Weather .date-text {
   color: #8f8f8f;
 }
-
 /* Middle section temperature */
 .Weather ul {
   margin: 0;
@@ -34,12 +30,11 @@
 }
 .Weather .description {
   font-size: 150%;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .Weather .col-4.weather-icons canvas {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   margin-top: 30px;
 }
 .Weather .weather-icons {
@@ -48,7 +43,7 @@
 .Weather .weather-icons:hover {
   opacity: 0.7;
 }
-/* CSS formerly knows as searchengine */
+/* Searchengine Form */
 .Weather form {
   margin-top: 0;
   display: flex;
@@ -89,7 +84,6 @@
 .Weather .search-icon:hover {
   opacity: 0.7;
 }
-
 /* Currentlocation button */
 .Weather .CurrentLocation {
   display: inline;
@@ -107,7 +101,6 @@
 .Weather .CurrentLocation .fa-map-marker-alt:hover {
   opacity: 0.7;
 }
-
 /* Unit conversion */
 .Weather .TempSwitch {
   display: inline;

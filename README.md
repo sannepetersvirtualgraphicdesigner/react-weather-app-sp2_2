@@ -16,9 +16,10 @@ Have a look at my React weather app with a simple but clean UI.
 ## Next release
 
 - Dark and Light theme
-- Mobile proof 
+- Mobile proof
 
-## Special thanks/credits to 
+## Special thanks/credits to
 
+- Divyanshu013 for your animated Weather Icons
 - Julia K. and Valeria S. for concept
 - SheCodes for such a helpful and great coding course

@@ -13,7 +13,6 @@ export default function WeatherForecast(props) {
   }
 
   if (loaded && props.city === forecast.city.name) {
-    console.log(forecast);
     return (
       <div className="WeatherForecast row">
         {forecast.list.slice(0, 5).map(function (forecastItem) {
@@ -21,13 +20,6 @@ export default function WeatherForecast(props) {
             <WeatherForecastPreview data={forecastItem} unit={props.unit} />
           );
         })}
-        {/* Keep to build the beginner way 
-        <WeatherForecastPreview data={forecast.list[0]} />
-        <WeatherForecastPreview data={forecast.list[1]} />
-        <WeatherForecastPreview data={forecast.list[2]} />
-        <WeatherForecastPreview data={forecast.list[3]} />
-        <WeatherForecastPreview data={forecast.list[4]} />
-        <WeatherForecastPreview data={forecast.list[5]} /> */}
       </div>
     );
   } else {
